@@ -83,16 +83,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
       setIsSubmitted(true);
       triggerConfetti();
 
-      const encoded = encodeURIComponent(message);
-      window.open(`https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encoded}`, '_blank');
+      window.open(BUSINESS_INFO.instagramUrl, '_blank');
     }, 600);
   };
 
-  const handleDirectWhatsApp = () => {
-    const quickMsg = encodeURIComponent(
-      `مرحباً Decora Art ✨\nأرغب في الاستفسار عن باقات الديكور وتجهيز المناسبات والأسعار المتاحة. شكراً لكم!`
-    );
-    window.open(`https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${quickMsg}`, '_blank');
+  const handleDirectInstagram = () => {
+    window.open(BUSINESS_INFO.instagramUrl, '_blank');
   };
 
   return (
@@ -115,42 +111,42 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto mb-4" />
           <p className="text-base sm:text-lg text-[#66564B] leading-relaxed">
-            املأي النموذج التالي أو تواصلي معنا مباشرة عبر الواتساب، وسنكون معكِ خطوة بخطوة لتحويل حلمك إلى حقيقة ساحرة
+            املأي النموذج التالي أو تواصلي معنا مباشرة عبر حسابنا على إنستغرام، وسنكون معكِ خطوة بخطوة لتحويل حلمك إلى حقيقة ساحرة
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
-          {/* Contact Details & Direct WhatsApp Card */}
+          {/* Contact Details & Direct Instagram Card */}
           <div className="lg:col-span-5 space-y-6">
             
-            {/* Direct WhatsApp Hero Card */}
-            <div className="bg-gradient-to-br from-[#25D366]/10 via-[#25D366]/5 to-transparent rounded-3xl p-8 border border-[#25D366]/30 shadow-sm">
+            {/* Direct Instagram Hero Card */}
+            <div className="bg-gradient-to-br from-[#E1306C]/10 via-[#E1306C]/5 to-transparent rounded-3xl p-8 border border-[#E1306C]/30 shadow-sm">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-14 h-14 rounded-2xl bg-[#25D366] text-white flex items-center justify-center text-2xl shadow-lg shrink-0">
-                  <MessageCircle className="w-7 h-7" />
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#F58529] via-[#D62976] to-[#962FBF] text-white flex items-center justify-center text-2xl shadow-lg shrink-0">
+                  <Instagram className="w-7 h-7" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-[#2B2320]">
-                    تواصلي معنا عبر WhatsApp
+                    تواصلي معنا عبر Instagram
                   </h3>
                   <p className="text-xs text-[#5C4E43] mt-0.5">
-                    رد سريع وتنسيق فوري مع منسقة الديكور
+                    رد سريع وتنسيق فوري عبر الرسائل المباشرة
                   </p>
                 </div>
               </div>
 
               <p className="text-sm text-[#57493F] leading-relaxed mb-6">
-                هل تفضلين المحادثة السريعة وإرسال صور ومقاسات القاعة أو الروم مباشرة؟ اضغطي الزر بالأسفل لبدء المحادثة فوراً.
+                هل تفضلين المحادثة السريعة وإرسال صور ومقاسات القاعة أو الروم مباشرة؟ اضغطي الزر بالأسفل للذهاب لصفحتنا وتواصل معنا فوراً.
               </p>
 
               <button
-                onClick={handleDirectWhatsApp}
-                className="w-full py-4 px-6 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-base shadow-lg hover:shadow-[#25D366]/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 cursor-pointer"
-                id="contact-direct-whatsapp-btn"
+                onClick={handleDirectInstagram}
+                className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-[#F58529] via-[#D62976] to-[#962FBF] text-white font-bold text-base shadow-lg hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 cursor-pointer"
+                id="contact-direct-instagram-btn"
               >
-                <MessageCircle className="w-6 h-6" />
-                <span>محادثة مباشرة عبر الواتساب</span>
+                <Instagram className="w-6 h-6" />
+                <span>محادثة عبر Instagram @decora_art111</span>
               </button>
             </div>
 
@@ -171,15 +167,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
               <div className="flex items-start gap-3.5 text-xs text-[#5C4E43]">
                 <MapPin className="w-5 h-5 text-[#C5A028] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="block text-[#2B2320] text-sm">نطاق التغطية:</strong>
-                  <span>{BUSINESS_INFO.city} (توصيل وتركيب لكافة القاعات والمنازل)</span>
+                  <strong className="block text-[#2B2320] text-sm">نطاق التغطية والقاعات:</strong>
+                  <span>{BUSINESS_INFO.city}</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3.5 text-xs text-[#5C4E43]">
                 <Instagram className="w-5 h-5 text-[#E1306C] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="block text-[#2B2320] text-sm">حساب الإنستغرام:</strong>
+                  <strong className="block text-[#2B2320] text-sm">حساب الإنستغرام الرسمي:</strong>
                   <a href={BUSINESS_INFO.instagramUrl} target="_blank" rel="noopener noreferrer" className="text-[#C5A028] font-bold underline">
                     {BUSINESS_INFO.instagramHandle}
                   </a>
@@ -211,7 +207,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
                     تم استلام طلبك بنجاح!
                   </h3>
                   <p className="text-sm text-[#66564B] max-w-md mx-auto leading-relaxed">
-                    تم تحويل طلبك أيضاً إلى الواتساب لفتح المحادثة المباشرة وتأكيد الحجز فوراً مع منسقة الديكور.
+                    تم تحويلك لصفحة إنستغرام لفتح المحادثة وتأكيد الحجز فوراً مع منسقة الديكور.
                   </p>
                   <div className="pt-6">
                     <button
@@ -251,13 +247,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
                     <div>
                       <label className="block text-xs font-bold text-[#4A3E38] mb-2 flex items-center gap-1.5">
                         <Phone className="w-3.5 h-3.5 text-[#C5A028]" />
-                        <span>رقم الهاتف / الواتساب *</span>
+                        <span>رقم التواصل / الهاتف *</span>
                       </label>
                       <input
                         type="tel"
                         required
                         dir="ltr"
-                        placeholder="05XXXXXXXX"
+                        placeholder="010XXXXXXXX"
                         value={formData.phone}
                         onChange={(e) => handleChange('phone', e.target.value)}
                         className="w-full bg-[#FAF8F5] border border-[#EADBCE] rounded-xl px-4 py-3 text-sm text-[#2B2320] text-right focus:ring-2 focus:ring-[#D4AF37]/50 focus:border-[#D4AF37] outline-none transition-all"
@@ -308,11 +304,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
                     <div>
                       <label className="block text-xs font-bold text-[#4A3E38] mb-2 flex items-center gap-1.5">
                         <MapPin className="w-3.5 h-3.5 text-[#C5A028]" />
-                        <span>مكان المناسبة (المدينة / القاعة / الفندق)</span>
+                        <span>مكان المناسبة / القاعة</span>
                       </label>
                       <input
                         type="text"
-                        placeholder="مثال: الرياض - قاعة الأسطورة / فندق الريتز"
+                        placeholder="مثال: المنصورة - القاعة الماسية / قاعة مارشال / طلخا"
                         value={formData.location}
                         onChange={(e) => handleChange('location', e.target.value)}
                         className="w-full bg-[#FAF8F5] border border-[#EADBCE] rounded-xl px-4 py-3 text-sm text-[#2B2320] focus:ring-2 focus:ring-[#D4AF37]/50 focus:border-[#D4AF37] outline-none transition-all"
@@ -362,17 +358,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
                     id="submit-booking-btn"
                   >
                     {isSubmitting ? (
-                      <span>جاري إرسال الطلب...</span>
+                      <span>جاري تحويل طلبك...</span>
                     ) : (
                       <>
                         <Send className="w-5 h-5" />
-                        <span>إرسال الطلب وحجز الاستشارة على WhatsApp</span>
+                        <span>إرسال الطلب والتواصل على Instagram</span>
                       </>
                     )}
                   </button>
 
                   <p className="text-center text-[11px] text-[#7A6A58]">
-                    ✨ بمجرد الإرسال سيتم فتح تطبيق واتساب فوراً بالمعلومات لسرعة الرد والمتابعة.
+                    ✨ بمجرد الإرسال يمكنك التواصل معنا على حساب إنستغرام لسرعة الرد والمتابعة.
                   </p>
 
                 </form>

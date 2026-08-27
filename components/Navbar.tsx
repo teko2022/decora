@@ -181,8 +181,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               }}
               className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B89332] text-[#2B2320] flex items-center justify-center gap-2 text-sm font-bold shadow-md"
             >
-              <MessageCircle className="w-4 h-4" />
-              <span>تواصلي معنا عبر الواتساب</span>
+              <Instagram className="w-4 h-4 text-[#E1306C]" />
+              <span>تواصلي معنا عبر إنستغرام</span>
             </button>
           </div>
         </div>

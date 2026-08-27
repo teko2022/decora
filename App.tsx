@@ -43,10 +43,7 @@ export default function App() {
   };
 
   const handleInquireGalleryItem = (item: GalleryItem) => {
-    const msg = encodeURIComponent(
-      `مرحباً Decora Art ✨\nأرغب في الاستفسار عن تفاصيل وتكلفة تصميم مشابه لـ: "${item.title}" (${item.categoryLabel}).\nهل يمكن تزويدي بالتفاصيل المتاحة؟`
-    );
-    window.open(`https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${msg}`, '_blank');
+    window.open(BUSINESS_INFO.instagramUrl, '_blank');
   };
 
   return (

@@ -102,11 +102,10 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({ item, onClose, onI
             <div className="pt-4 border-t border-[#EADBCE] space-y-3">
               <button
                 onClick={() => onInquire(item)}
-                className="w-full py-3.5 px-5 rounded-xl bg-gradient-to-r from-[#D4AF37] via-[#E6C875] to-[#B89332] text-[#2B2320] text-xs sm:text-sm font-bold shadow-lg hover:shadow-[#D4AF37]/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-3.5 px-5 rounded-xl bg-gradient-to-r from-[#F58529] via-[#D62976] to-[#962FBF] text-white text-xs sm:text-sm font-bold shadow-lg hover:opacity-95 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
                 id="lightbox-inquire-btn"
               >
-                <MessageCircle className="w-4 h-4" />
-                <span>طلب تصميم مشابه على WhatsApp</span>
+                <span>طلب تصميم مشابه على Instagram</span>
               </button>
 
               <a

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, Calculator, Check, MessageCircle, Heart, Palette, Layers, Calendar } from 'lucide-react';
+import { Sparkles, Calculator, Check, Instagram, Heart, Palette, Layers, Calendar } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/weddingData';
 
 interface InteractivePlannerProps {
@@ -48,20 +48,8 @@ export const InteractivePlanner: React.FC<InteractivePlannerProps> = ({ onCustom
     }
   };
 
-  const handleSendToWhatsApp = () => {
-    const eventName = eventTypes.find(e => e.id === eventType)?.label || '';
-    const themeName = styleThemes.find(t => t.id === styleTheme)?.name || '';
-    const scaleName = guestScale === 'intimate' ? 'حفل عائلي / صغير' : guestScale === 'medium' ? 'متوسط (100 - 250 ضيف)' : 'كبير وفاخر (+300 ضيف)';
-
-    const message = `مرحباً ديكورا آرت ✨\nلقد قمت بتنسيق رغبتي للديكور عبر الموقع:\n\n` +
-      `• نوع المناسبة: ${eventName}\n` +
-      `• الثيم المفضل: ${themeName}\n` +
-      `• حجم المناسبة: ${scaleName}\n` +
-      `• الإضافات المختارة:\n${selectedAddons.map(a => `  - ${a}`).join('\n')}\n\n` +
-      `أرغب في معرفة التكلفة التقريبية وتوفر الموعد. شكراً لكم!`;
-
-    const encoded = encodeURIComponent(message);
-    window.open(`https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encoded}`, '_blank');
+  const handleSendToInstagram = () => {
+    window.open(BUSINESS_INFO.instagramUrl, '_blank');
   };
 
   return (
@@ -78,7 +66,7 @@ export const InteractivePlanner: React.FC<InteractivePlannerProps> = ({ onCustom
             نسقي ديكور ليلتك واحصلي على استشارة فورية
           </h2>
           <p className="text-sm sm:text-base text-[#66564B]">
-            اختاري تفاصيل مناسبتك المفضلة، واكتشفي الثيم الذي يمثلك واحصلي على عرض مخصص على الواتساب بضغطة زر
+            اختاري تفاصيل مناسبتك المفضلة، واكتشفي الثيم الذي يمثلك واحصلي على عرض مخصص عبر إنستغرام بضغطة زر
           </p>
         </div>
 
@@ -171,7 +159,7 @@ export const InteractivePlanner: React.FC<InteractivePlannerProps> = ({ onCustom
 
             </div>
 
-            {/* Summary & WhatsApp Card */}
+            {/* Summary & Instagram Card */}
             <div className="lg:col-span-5 bg-gradient-to-br from-[#FAF5EE] to-[#F3EADB] rounded-2xl p-6 border border-[#E0D2C0] flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between pb-4 border-b border-[#D8C6B0] mb-4">
@@ -217,7 +205,7 @@ export const InteractivePlanner: React.FC<InteractivePlannerProps> = ({ onCustom
                   <div className="flex items-start gap-2.5">
                     <Sparkles className="w-4 h-4 text-[#C5A028] shrink-0 mt-0.5" />
                     <p className="text-[11px] text-[#5C4E43] leading-relaxed">
-                      <strong>استشارة مجانية:</strong> نوفر لكِ معاينة صور ونماذج وتحديد الميزانية المناسبة عبر الواتساب فور إرسال اختياراتك!
+                      <strong>استشارة مجانية:</strong> نوفر لكِ معاينة صور ونماذج وتحديد الميزانية المناسبة عبر إنستغرام فور إرسال اختياراتك!
                     </p>
                   </div>
                 </div>
@@ -225,12 +213,12 @@ export const InteractivePlanner: React.FC<InteractivePlannerProps> = ({ onCustom
 
               {/* Action */}
               <button
-                onClick={handleSendToWhatsApp}
-                className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-[#D4AF37] via-[#E6C875] to-[#B89332] text-[#2B2320] font-bold text-sm shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2.5 cursor-pointer pulse-gold"
-                id="planner-send-whatsapp"
+                onClick={handleSendToInstagram}
+                className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-[#F58529] via-[#D62976] to-[#962FBF] text-white font-bold text-sm shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2.5 cursor-pointer"
+                id="planner-send-instagram"
               >
-                <MessageCircle className="w-5 h-5 text-[#2B2320]" />
-                <span>إرسال هذا التنسيق لمنسقة الواتساب</span>
+                <Instagram className="w-5 h-5 text-white" />
+                <span>إرسال هذا التنسيق لمنسقة الديكور على Instagram</span>
               </button>
 
             </div>

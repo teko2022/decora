@@ -54,13 +54,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                 <span>{BUSINESS_INFO.instagramHandle}</span>
               </a>
 
-              <button
-                onClick={onOpenBooking}
-                className="px-4 py-2 rounded-xl bg-[#D4AF37] hover:bg-[#E6C875] text-[#2B2320] text-xs font-bold flex items-center gap-2 transition-all cursor-pointer"
+              <a
+                href={BUSINESS_INFO.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#F58529] via-[#D62976] to-[#962FBF] text-white text-xs font-bold flex items-center gap-2 transition-all cursor-pointer"
               >
-                <MessageCircle className="w-4 h-4" />
-                <span>تواصل سريع</span>
-              </button>
+                <Instagram className="w-4 h-4" />
+                <span>تواصل على إنستغرام</span>
+              </a>
             </div>
           </div>
 
@@ -88,7 +90,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               تواصل ومتابعة
             </h4>
             <p className="text-xs text-[#B8ACA0] leading-relaxed">
-              يسعدنا استقبال استفساراتكم وحجوزاتكم يومياً على مدار الأسبوع.
+              يسعدنا استقبال استفساراتكم وحجوزاتكم يومياً على مدار الأسبوع عبر حسابنا الرسمي.
             </p>
             
             <div className="space-y-2 pt-1 text-xs">
@@ -99,8 +101,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
                 </a>
               </div>
               <div className="flex items-center gap-2 text-[#E6C875]">
-                <MessageCircle className="w-4 h-4 text-[#25D366]" />
-                <span>واتساب الحجوزات والاستشارات متاح 24/7</span>
+                <Sparkles className="w-4 h-4 text-[#D4AF37]" />
+                <span>الرسائل المباشرة على إنستغرام متاحة 24/7</span>
               </div>
             </div>
           </div>
