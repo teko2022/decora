@@ -65,7 +65,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ preselectedServi
 
     setIsSubmitting(true);
     
-    // Construct automated WhatsApp Message
+    // Construct automated Instagram Message
     const message = 
       `مرحباً Decora Art ✨\n` +
       `أرغب في حجز وتنسيق مناسبة بالبيانات التالية:\n\n` +
