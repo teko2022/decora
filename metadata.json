@@ -1,0 +1,8 @@
+{
+  "name": "Decora Art | ديكور وتنسيق الأفراح والمناسبات",
+  "description": "صفحة هبوط فاخرة لخدمات تصميم وتنسيق ديكورات الأعراس والخطوبة وغرف العرايس والكوشات من Decora Art (@decora_art111).",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
