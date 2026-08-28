@@ -36,10 +36,6 @@ export const InstagramSection: React.FC = () => {
                 <p className="text-xs sm:text-sm text-[#7A6A58] mt-0.5">
                   Decora Art | ديكور وتنسيق أفراح ورومات عرايس
                 </p>
-                <div className="flex items-center gap-4 mt-2 text-xs text-[#5C4E43] font-semibold">
-                  <span><strong>+450</strong> منشور وتصميم</span>
-                  <span><strong>+28K</strong> متابعة</span>
-                </div>
               </div>
             </div>
 
